@@ -25,16 +25,16 @@ const
     return Animated.add(
       Animated.add(
         angle,
-        Animated.divide(pow(angle, 3), -__factorial(3))
+        Animated.divide(pow(angle, 3), -6)
       ),
       Animated.add(
         Animated.add(
-          Animated.divide(pow(angle, 5), __factorial(5)),
-          Animated.divide(pow(angle, 7), -__factorial(7))
+          Animated.divide(pow(angle, 5), 120),
+          Animated.divide(pow(angle, 7), -5040)
         ),
         Animated.add(
-          Animated.divide(pow(angle, 9), __factorial(9)),
-          Animated.divide(pow(angle, 11), -__factorial(11))
+          Animated.divide(pow(angle, 9), 362880),
+          Animated.divide(pow(angle, 11), -39916800)
         )
       )
     );
@@ -70,16 +70,7 @@ const
     Animated.add(
       Animated.modulo(Animated.add(node, Math.PI), 2*Math.PI),
       -Math.PI
-    ),
-
-  __factorial = (
-    n: number
-  ) : number => {
-    let sum = n;
-    while(n>2)
-      sum *= --n;
-    return sum;
-  };
+    );
 
 export default {
   sin,
